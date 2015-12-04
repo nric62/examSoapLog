@@ -12,7 +12,6 @@ while ( (my $row = <$fh>) ) {
 		if ($row =~ /\d{2}\/\d{2}\/\d{4}/) {$time=$row;	} #12/02/2015 15:14:00 *********************
 		elsif ($row =~ /Input to Web service with SOAP action/) {	#Action
 			$cntMsg++;
-			#Input to Web service with SOAP action = http://CheckService.central.services.auraws.aura.csi.it/AULA.WS.AulaWS.NotificaEvento,http://CheckService.central.services.auraws.aura.csi.it/AULA.WS.AulaWS.NotificaEvento
 			my ($act)= (split("=",$row))[1];
 			my @actions=split(",",$act);
 			if ($#actions>0) {
